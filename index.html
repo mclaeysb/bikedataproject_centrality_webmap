@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Bike Data Project - Centrality</title>
+  <!--<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />-->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav id="filter" class="box filter"></nav>
+  <nav id="info" class="box info">
+    <h1>Brussels Cycling Potential</h1>
+    <p>We try to predict how useful each specific road segment would be for an average cycling trip, and compare with the actual bike trip count on that segment. <br>
+    <em>Let's find out which roads are under- or over-used - and why!</em></p>
+    <p>We use the BikeDataProject <a href="https://wiki.bikedataproject.org/open-cycling-data/bicycle-counts">'bicycle count dataset'</a> for the actual counts. We must note that this dataset is still relatively small, and expected to be skewed towards recreational, affluent bikers living in the richer part of town (center, South and East).</p>
+    <p>To estimate the predicted usefulness of each road segment, we use the so called <a href="https://en.wikipedia.org/wiki/Betweenness_centrality">betweenness centrality</a> measure for graphs (street network), which for every graph node (road crossing) counts the number of shortest paths, between any other pair of nodes, that pass through it. We carry the result over to the graph's edges (street segment) and apply some local averaging.</p>
+    <p>Some first observations include over-usage along the canal and in parks, on some of the main lanes and in the East of town. We also observe notable under-usage of some apparent shortcuts and unsafe or hilly main lanes.</p>
+  </nav>
+  <nav id="legend" class="box legend">
+    <div id="gradient"></div>
+    <div id="gradient-names">
+      <div id="gradient-names-top">More Actual Trips</div>
+      <div id="gradient-names-bottom">More Predicted Trips</div>
+    </div>
+  </nav>
+  <div id="map"></div>
+  <script src='map.js'></script>
+</body>
+</html>

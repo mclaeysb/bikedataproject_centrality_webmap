@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+path {
+    -webkit-transition: fill 400ms;
+    transition: fill 400ms;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Box */
+.box {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: sans-serif;
+    overflow: auto;  /*border-radius: 3px;*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Info */
+.info {
+    bottom: 40px;
+    left: 10px;
+    padding: 12px;
+    height: 230px;
+    width: 470px;
+}
+
+#info h1 {
+    margin: 0px;
+    font-size: 16px;
+}
+
+#info p {
+    color: #404040;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#info a {
+    color: #404040;
+}
+
+/* Filter */
+.filter {
+    top: 10px;
+    right: 10px;
+}
+
+.filter a {
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #404040;
+    display: block;
+    margin: 0;
+    padding: 8px 10px;
+    text-decoration: none;  /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
+    text-align: left;
+}
+
+.filter a:hover {
+    background: #D1D4D9;
+    color: #404040;
+}
+
+.filter a.active {
+    background: #C7C9CC;
+    color: #404040;
+}
+
+.filter a.active:hover {
+    background: #C7C9CC;
+    color: #404040;
+}
+
+/* Zoom controls */
+.mapboxgl-ctrl {
+    padding: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+}
+
+/* Legend */
+.legend {
+    bottom: 40px;
+    right: 10px;
+    padding: 10px;
+    height: 60px;
+    width: 140px;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #404040;
+}
+
+#gradient {
+    float: left;
+    margin-right: 10px;
+    height: 60px;
+    width: 10px;
+    background-image: linear-gradient(to bottom, #2b83ba, #abdda4, #ffffbf, #fdae61, #d7191c);
+}
+
+#gradient-names {
+    float: left;
+    height: 60px;
+    width: 120px;
+    position: relative;
+}
+
+#gradient-names-top {
+    position: absolute;
+    width: 120px;
+    top: 5px;
+}
+
+#gradient-names-bottom {
+    position: absolute;
+    width: 120px;
+    bottom: 5px;
+}
+
