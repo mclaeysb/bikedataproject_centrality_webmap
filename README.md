@@ -1,6 +1,10 @@
-# A Leaflet template
+# Brussels Cycling Potential
 
-## Getting started
+We try to predict how useful each specific road segment would be for an average cycling trip, and compare with the actual bike trip count on that segment.
+
+*Let's find out which roads are under- or over-used - and why!*
+
+## Getting started editing this map
 
 To read up on making webmaps using Mapbox GL, take a look at [these examples](https://www.mapbox.com/mapbox-gl-js/example/).
 
