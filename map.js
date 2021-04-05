@@ -1,6 +1,11 @@
-
 // Specifying access tokens
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNsYWV5c2IiLCJhIjoiY2loZ3dtanZlMDRyaHRyajdhOGZwZ3VqZSJ9.-VlodpvODHjL3GEVNyxDgQ';
+
+// Set bounds to Brussels
+var bounds = [
+  [4.2233400304194868, 50.7480392481563882], // Southwest coordinates
+  [4.5128202396964676, 50.9277572656773287] // Northeast coordinates
+];
 
 // Create map with baselayer
 var map = new mapboxgl.Map({
@@ -11,7 +16,9 @@ var map = new mapboxgl.Map({
 
   center: [4.35043, 50.84787],
   zoom: 14,
-  minZoom: 13
+  minZoom: 12,
+  maxZoom: 17,
+  maxBounds: bounds // Sets bounds as max
 });
 
 // Stuff to do when the map is loaded
@@ -61,3 +68,11 @@ map.on('load', function () {
   document.getElementById('betweenness_vs_count').click()
 })
 
+// Add overlay functionallity
+function overlay_on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function overlay_off() {
+    document.getElementById("overlay").style.display = "none";
+}
