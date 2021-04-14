@@ -18,23 +18,46 @@
 
       <h2>Why I made this</h2>
 
-      I hope this map, or a similar exercise, could help city officials and traffic managers identify issues and/or usage potential: which potentially useful roads seem to be avoided, and why? Are there any unexpected routes taken? How could we improve our infrastructre along these routes? Etc.
+      I hope this map, or a similar exercise, could help city officials and traffic managers identify issues and/or usage potential: which potentially useful roads seem to be avoided, and why? Are there any unexpected routes taken? How could we improve our infrastructure along these routes? Etc.
 
       <h2>How I made this</h2>
 
-      <p>I use the BikeDataProject <a href="https://wiki.bikedataproject.org/open-cycling-data/bicycle-counts">'bicycle count dataset'</a> for the actual count. I must note that this dataset is still relatively small, and propbably skewed towards recreational, affluent bikers living in the richer part of town (center, South and East).</p>
+      <p>I use the BikeDataProject <a href="https://wiki.bikedataproject.org/open-cycling-data/bicycle-counts">'bicycle count dataset'</a> for the actual count. I must note that this dataset is still relatively small, and probably skewed towards recreational, affluent bikers living in the richer part of town (center, South and East).</p>
       
-      <p>To estimate the predicted usefulness of each road segment, I use the so called <a href="https://en.wikipedia.org/wiki/Betweenness_centrality">betweenness centrality</a> measure for graphs (like a street network in our example). The algorithm for this measure computes the shortest path between every pair of graph nodes (these nodes are our road crossing) and keeps count of how many times those paths pass through eacht node, to arrive at some measure for node imporance. I carried this resulting count over to the graph edges (our street segment) that are touching each node, and apply some local averaging to arrive at a predicted trip count.</p>
+      <p>To estimate the predicted usefulness of each road segment, I use the so called <a href="https://en.wikipedia.org/wiki/Betweenness_centrality">betweenness centrality</a> measure for graphs (here the Brussels street network is the graph). The algorithm for this measure computes the shortest path between every pair of graph nodes (road crossings) and keeps count of how many times those paths pass through each node, to arrive at some measure for node importance. I carried the resulting count over to the graph's edges (street segments) that are touching each node, and apply some local averaging to arrive at a predicted trip count.</p>
       
       <h2>What I found</h2>
       
-      <p>Some first observations include over-usage along the canal and in parks, on some of the main lanes and in the East of town. I also observe notable under-usage of some apparent shortcuts and unsafe or hilly main lanes.</p>
-
+      <p>
+        <ul>
+          <li>
+            Some first observations include over-usage on the recreational roads (along the canal and in parks) as one would expect, and on some of the main lanes and in the East of town (Louisa, Loi-Wet, Kroon-Couronne, Anspach).
+          </li>
+          <li>
+            Cyclists avoid the East-West passage through the city center (through Grasmarkt-Marché aux Herbes) by driving around it, in favour of a more northerly or southernly itinerary (through Ecuyer-Schildknaap or Lombard)
+          </li>
+          <li>
+            Some big lanes are clearly under-used: Mons, Alsemberg, Wavre (especially around Plein-Plaine), Leuven (in the center of Sint-Joost and past Meiser), Haacht. The most notable one is Nijvel: one red line from start to end! Indeed: we have almost no counts on this lane while it turns out to be one of the most important streets according to the shortest path algorithm. The bad, unsafe conditions of these lanes are probably part of the explanation.
+          </li>
+          <li>
+            Some squares seem be be avoided, with Liedts as the clearest example.
+          </li>
+          <li>
+            Some shortcuts seem to be unknown to cyclists: from Sint Joost to Diamand through the rue des confédérés-eedgenotenstraat, from Bruxelles West to Ossegem through the rue Vandenpeereboomstraat (as well as the Louise Mettewie lane), the rue Maria Christinastraat in Laken. What does the infrastructure on these streets look like? Should they be included in the official cycling networks? Also note that in Ganshoren the Van Hongarijestraat-Rue de Hongrie is preferred by the shortest paths over the Keizer Karellaan-Avenue Charles-Quint, but the latter is used by bikers.
+          </li>
+          <li>
+            The absence of a clear North-West to South-East passage in the sparse road network near Diegem and Sint-Stevens-Woluwe is very clear.
+          </li>
+          <li>
+            The main lanes seem to be under-used as we go further away from the center - near their passage of the outer ring road (see Gentse-, Leuvense-, Haachtse-steenweg). This is probably partly explained by the combination of their importance for passing the few outer ring road bridges/tunnels, and possibly a lack of data further away from the center.
+          </li>
+        </ul>
+      
       <p><i>What do you observe?</i></p>
 
       <h2>Contact me</h2>
 
-      <p>This map was made by Manuel Claeys Bouuaert in March 2021. Discover some of <a href="https://mclaeysb.github.io/">my other maps</a>.</p>
+      <p>This map was made by Manuel Claeys Bouuaert in March 2021. More about me and some other maps on my <a href="https://mclaeysb.github.io/">portfolio website</a>.</p>
 
       <p>I'm happy to talk about where this project could go. Feel free to send me an <a href="mailto:manuel.claeys.b@gmail.com">email</a>!</p>
     
@@ -44,9 +67,9 @@
     
     <h1>Brussels Cycling Potential 🚲</h1>
     
-    <p>While looking at an open source dataset if cycling trips in Brussels, I was curious if bikers would be taking obvious or unexpected routes. Could closer inspection learn us which shortcuts or detours are popular or under-used? I made this map to find out!</p>
+    <p>While looking at an open source dataset of cycling trips in Brussels, I was curious if bikers are taking obvious or unexpected routes. Could closer inspection learn us which shortcuts or detours are popular or under-used? I made this map to find out!</p>
     
-    <p>This map compares the actual trips on each road segment from that dataset to the predicted trips, which I computed using a wayfinding algorithm. Explore the map to find out which roads are popular and which have more potential.</p>
+    <p>This map compares the actual number of trips on each road segment from said dataset to a predicted number of trips, which I computed using a way-finding algorithm. Explore the map to find out which roads are popular and which have more potential.</p>
 
     <p class="buttonwrapper">
       <button onclick="overlay_on()" class="button">Learn more</button>
